@@ -1,0 +1,6 @@
+Idea: We created multiple one.js files to load balance the server. Nginx would do all the load balancing for us. Listening to different port numbers
+
+Also created multiple sharedb.js file for different one.js files to write the sharedb information to. Not overloading sharedb js file. Changing port number on the 
+reconnecting websockets
+
+Put elastic search and mongodb on different servers

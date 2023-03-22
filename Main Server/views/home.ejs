@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <form action="/index/search" method="get" class="form_center">
+        <label for="search" class="search_label">Search</label>
+        <input type="text" id="search" name="q">
+        <input type="submit" value="search" class="submit_box">
+    </form>
+    <form action="/index/suggest" method="get" class="form_center">
+        <label for="suggest" class="suggest_label">Suggest</label>
+        <input type="text" id="suggest" name="q">
+        <input type="submit" value="suggest" class="submit_box">
+    </form>
+    <form action="/users/logout" method="post" class="form_center">
+        <input type="submit" value="Logout" class="submit_box"> 
+    </form>
+    <form action="/collection/create" method="post" class="form_center">
+        <label for="name" class="name_label">Name</label>
+        <input type="text" id="name" name="name"><br><br>
+        <input type="submit" value="Create" class="submit_box">
+    </form>
+    <table>
+        <% for(var i=0; i < documents.length; i++) { %>
+            <tr>
+                <td><a href="http://zero-and-one.cse356.compas.cs.stonybrook.edu/doc/edit/<%= documents[i][1] %>">
+                        <%= documents[i][0] %>
+                    </a></td>
+                <td> <button class = "deleteButton" value = "<%=documents[i][1]%>"></button> </td>
+            </tr>
+            <% } %>
+    </table>
+
+    <script src ="../button.js"></script>
+    
+</body>
+
+
+</html>
